@@ -8,25 +8,43 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@600&display=swap" rel="stylesheet">
-    <title>Bird Eating Games</title>
+    <title>Hap Hap Games</title>
     <link rel="stylesheet" href="./src/style/global.css" />
 </head>
 
 <body>
     <div class="container">
         <header>
-            <h2>Bird Eating Games</h2>
+            <h2>Hap Hap Games </h2>
             <h3>Level : <span id="levelTxt">0</span></h3>
             <p>MADE BY ALTAF</p>
         </header>
 
-        <h3 id="title__1">Welcome!</h3>
-
         <main>
+            <h3 id="title__1"></h3>
+
+
+            <div class="wrapper">
+                <h3 id="title__2">My Instgram : <a href="https://www.instagram.com/aftlah_" target="_blank">afltah_</a>
+                    <h3 id="title__2">My Github : <a href="https://www.instagram.com/aftlah_"
+                            target="_blank">afltah_</a>
+                        <button class="btn" id="btn" onclick="close()"><i class="fa-solid fa-xmark"></i></button>
+                    </h3>
+            </div>
+
+
             <div class="board"></div>
+
+            <div class="arrow">
+                <button id="kanan" onclick="_kanan()"><i class="fa-solid fa-arrow-right kanan"></i></button>
+                <button id="atas" onclick="_atas()"><i class="fa-solid fa-arrow-up atas"></i></button>
+                <button id="kiri" onclick="_kiri()"><i class="fa-solid fa-arrow-left kiri"></i></button>
+                <button id="bawah" onclick="_bawah()"><i class="fa-solid fa-arrow-down bawah"></i></button>
+            </div>
         </main>
     </div>
     <script src="./src/js/index.js"></script>
+    <script src="https://kit.fontawesome.com/c73ea9f701.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
