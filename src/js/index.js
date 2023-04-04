@@ -65,7 +65,7 @@ const games = {
   },
   levelUp() {
     config.level += 1;
-    if (config.level %5 === 0) {
+    if (config.level % 5 === 0) {
       config.level5 += 1;
     }
     return false;
@@ -73,29 +73,22 @@ const games = {
   txtLevelUp() {
     if (config.level === 1) {
       title.innerHTML = "WELLCOME TO HAP HAP GAMES:)";
-    }
-    else if (config.level === 3) {
+    } else if (config.level === 3) {
       title.innerHTML = "ENJOY!!!";
-    }
-    else if(config.level === 4){
-      title.innerHTML = 'AYO... 1 KALI LAGI NAIK LEVEL'
-    }
-    else if(config.level === 5){
-      title.innerHTML = 'YEY KAMU SUDAH NAIK LEVEL'
-    }
-    else if(config.level === 7){
-      title.innerHTML = 'SETIAP 5X MAKAN KAMU AKAN NAIK LEVEL'
-    }
-    else if (config.level === 10) {
+    } else if (config.level === 4) {
+      title.innerHTML = "AYO... 1 KALI LAGI NAIK LEVEL";
+    } else if (config.level === 5) {
+      title.innerHTML = "YEY KAMU SUDAH NAIK LEVEL";
+    } else if (config.level === 7) {
+      title.innerHTML = "SETIAP 5X MAKAN KAMU AKAN NAIK LEVEL";
+    } else if (config.level === 10) {
       title2.style.opacity = "1";
       title2.style.visibility = "visible";
       title2.style.zIndex = "1";
-    }
-    else if(config.level === 11){
-      title.innerHTML = 'MAKASIH SUDAH BERMAIN'
-    }
-    else {
-      title.innerHTML = ""
+    } else if (config.level === 11) {
+      title.innerHTML = "MAKASIH SUDAH BERMAIN";
+    } else {
+      title.innerHTML = "";
     }
   },
   isWin() {
