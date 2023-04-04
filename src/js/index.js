@@ -72,12 +72,15 @@ const games = {
   },
   txtLevelUp() {
     if (config.level === 1) {
-      title.innerHTML = "WELLCOME TO MY GAMES :)";
+      title.innerHTML = "WELLCOME TO HAP HAP GAMES:)";
     }
     if (config.level === 3) {
       title.innerHTML = "ENJOY!!!";
     }
-    if (config.level === 2) {
+    if(config.level > 3){
+      title.innerHTML = ''
+    }
+    if (config.level5 === 2) {
       title2.style.opacity = "1";
       title2.style.visibility = "visible";
       title2.style.zIndex = "1";
@@ -121,7 +124,6 @@ function _bawah() {
 }
 
 function movement(listen) {
-  // console.log(listen.key);
   switch (listen.key) {
     case "ArrowUp":
       config.velocity.y = -1;
@@ -180,7 +182,6 @@ setInterval(start, config.speed);
 document.addEventListener("keydown", movement);
 
 //REMOVE CARD
-
 const btn = document.getElementById("btn");
 btn.addEventListener("click", function () {
   title2.remove();
