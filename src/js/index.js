@@ -74,25 +74,28 @@ const games = {
     if (config.level === 1) {
       title.innerHTML = "WELLCOME TO HAP HAP GAMES:)";
     }
-    if (config.level === 3) {
+    else if (config.level === 3) {
       title.innerHTML = "ENJOY!!!";
     }
-    if(config.level === 5){
+    else if(config.level === 4){
       title.innerHTML = 'AYO... 1 KALI LAGI NAIK LEVEL'
     }
-    if(config.level === 7){
+    else if(config.level === 5){
       title.innerHTML = 'YEY KAMU SUDAH NAIK LEVEL'
     }
-    if(config.level === 9){
+    else if(config.level === 7){
       title.innerHTML = 'SETIAP 5X MAKAN KAMU AKAN NAIK LEVEL'
     }
-    if (config.level === 10) {
+    else if (config.level === 10) {
       title2.style.opacity = "1";
       title2.style.visibility = "visible";
       title2.style.zIndex = "1";
     }
-    if(config.level === 11){
+    else if(config.level === 11){
       title.innerHTML = 'MAKASIH SUDAH BERMAIN'
+    }
+    else {
+      title.innerHTML = ""
     }
   },
   isWin() {
