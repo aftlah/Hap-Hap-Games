@@ -5,10 +5,11 @@ const title = document.getElementById("title__1");
 const title2 = document.querySelector(".wrapper");
 
 const ig = "https://www.instagram.com/aftlah_/";
-const randomPosition = () => ~~(Math.random() * 20) + 1;
+const randomPosition = () => ~~(Math.random() * 15) + 1;
+
 
 let config = {
-  speed: 120,
+  speed: 190,
   level: 0,
   level5: 0,
   player: {
@@ -54,9 +55,9 @@ const games = {
   resetPlayerPosition() {
     if (
       config.player.x <= 0 ||
-      config.player.x >= 21 ||
+      config.player.x >= 16 ||
       config.player.y <= 0 ||
-      config.player.y >= 21
+      config.player.y >= 16
     ) {
       config.player.x = randomPosition();
       config.player.y = randomPosition();
@@ -91,10 +92,12 @@ const games = {
       title.innerHTML = "";
     }
   },
+
   isWin() {
     if (config.player.x == config.food.x && config.player.y == config.food.y) {
       this.levelUp();
       this.txtLevelUp();
+      
       config.showTittle();
       levelTxt.innerHTML = config.level5;
 

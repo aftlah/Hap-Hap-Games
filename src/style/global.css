@@ -35,18 +35,18 @@ header p {
 
 main {
   position: relative;
+  height: 100vh;
 }
 
 #title__1 {
   opacity: 0;
-  visibility: "visible";
+  visibility: hidden;
   z-index: -1;
   text-align: center;
   position: absolute;
-  top: 50%;
-  left: 48%;
+  top: 10%;
   color: white;
-  width: 120px;
+  width: 100%;
 }
 
 .wrapper {
@@ -79,12 +79,17 @@ main {
 }
 
 .btn {
+  display: inline-block;
   padding: 0;
   margin-top: 5%;
   /* border: 3px solid white; */
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+btn:active {
+  background-color: white;
+  border-style: outset;
 }
 
 .btn i {
@@ -101,14 +106,13 @@ main {
   border-radius: 6px;
   width: 88%;
   height: 88vh;
-  grid-template: repeat(20, 1fr) / repeat(20, 1fr); /* y / x */
+  grid-template: repeat(15, 1fr) / repeat(15, 1fr); /* y / x */
 }
 
 .arrow {
   position: absolute;
   width: 250px;
   height: 140px;
-  bottom: 0;
   background-color: transparent;
 }
 
@@ -131,13 +135,12 @@ main {
 
 .arrow i {
   cursor: pointer;
-  color: white;
-  font-size: 80px;
-  /* height: min-content; */
+  color: #9dc9d6;
+  font-size: 60px;
   width: 100%;
   height: 74px;
   position: absolute;
-  padding: 0;
+  padding-top: 8px;
 }
 
 .board .food {
@@ -155,12 +158,16 @@ main {
 }
 
 @media screen and (max-width: 576px) {
+  .board {
+    height: 70vh;
+  }
   .arrow {
-    width: 190px;
-    left: 35%;
+    /* background-color: burlywood; */
+    transform: translate(-45px, -65px);
+    width: 200px;
   }
   .kanan {
-    right: 0;
+    right: 10px;
     top: -3px;
   }
   .kiri {
@@ -215,18 +222,22 @@ main {
     color: #9dc9d6;
   }
   .btn {
+    display: inline-block;
     padding: 0;
     margin-top: 15%;
     border: none;
     background-color: transparent;
     cursor: pointer;
   }
+  
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
   .arrow {
     left: 37%;
+    transform: translate(-10px, -150px);
     width: 200px;
+    /* background-color: blue; */
   }
   .kanan {
     right: 0;
