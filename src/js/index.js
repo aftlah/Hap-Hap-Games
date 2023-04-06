@@ -33,7 +33,7 @@ let config = {
       title.style.opacity = "0";
       title.style.visibility = "hidden";
       title.style.zIndex = "-1";
-    }, 6000);
+    }, 5000);
   },
 };
 // METODE
@@ -68,7 +68,7 @@ const games = {
     config.level % 5 == 0 ? (config.level5 += 1) : false;
   },
   txtLevelUp() {
-    if (config.level === 1) {
+    if (config.level === 1 || config.level == 2) {
       title.innerHTML = "WELLCOME TO HAP HAP GAMES:)";
     } else if (config.level === 3) {
       title.innerHTML = "AYO... DIKI LAGI NAIK LEVEL";
@@ -85,7 +85,7 @@ const games = {
     } else if (config.level === 13) {
       title.innerHTML = "ENJOY!!!";
     } else {
-      title.innerHTML = "";
+      title.innerHTML = '';
     }
   },
 
