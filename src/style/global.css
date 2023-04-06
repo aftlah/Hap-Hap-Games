@@ -47,8 +47,9 @@ main {
   top: 10%;
   color: white;
   width: 100%;
+  /* animation: fadeOut 1s ease-in-out; */
+  
 }
-
 .wrapper {
   opacity: 0;
   visibility: hidden;
@@ -82,18 +83,17 @@ main {
   display: inline-block;
   padding: 0;
   margin-top: 5%;
-  /* border: 3px solid white; */
   border: none;
   background-color: transparent;
   cursor: pointer;
 }
 btn:active {
-  background-color: white;
+  background-color: transparent;
   border-style: outset;
 }
 
 .btn i {
-  font-size: 70px;
+  font-size: 60px;
   color: #9dc9d6;
 }
 
@@ -106,7 +106,8 @@ btn:active {
   border-radius: 6px;
   width: 88%;
   height: 88vh;
-  grid-template: repeat(15, 1fr) / repeat(15, 1fr); /* y / x */
+  /* z-index: 3; */
+  grid-template: repeat(20, 1fr) / repeat(20, 1fr); /* y / x */
 }
 
 .arrow {
@@ -157,13 +158,32 @@ btn:active {
   background-repeat: no-repeat;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+
 @media screen and (max-width: 576px) {
   .board {
     height: 70vh;
   }
   .arrow {
     /* background-color: burlywood; */
-    transform: translate(-45px, -65px);
+    transform: translate(-45px, -5px);
     width: 200px;
   }
   .kanan {
@@ -213,6 +233,12 @@ btn:active {
     padding: 10px 25px;
     line-height: 40px;
   }
+  #title__1 {
+    max-width: 80%;
+    text-align: center;
+    right: 40px;
+    
+  }
   #title__2 {
     display: flex;
     flex-direction: column;
@@ -229,7 +255,6 @@ btn:active {
     background-color: transparent;
     cursor: pointer;
   }
-  
 }
 
 @media (min-width: 577px) and (max-width: 768px) {

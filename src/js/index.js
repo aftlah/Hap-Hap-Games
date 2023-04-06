@@ -3,13 +3,12 @@ console.log(board);
 const levelTxt = document.getElementById("levelTxt");
 const title = document.getElementById("title__1");
 const title2 = document.querySelector(".wrapper");
+// const ig = "https://www.instagram.com/aftlah_/";
 
-const ig = "https://www.instagram.com/aftlah_/";
-const randomPosition = () => ~~(Math.random() * 15) + 1;
-
+const randomPosition = () => ~~(Math.random() * 20) + 1;
 
 let config = {
-  speed: 190,
+  speed: 200,
   level: 0,
   level5: 0,
   player: {
@@ -25,6 +24,7 @@ let config = {
     y: 0,
   },
   showTittle() {
+    title.style.animation = "fadeIn 1s";
     title.style.opacity = "1";
     title.style.visibility = "visible";
     title.style.zIndex = "1";
@@ -33,7 +33,7 @@ let config = {
       title.style.opacity = "0";
       title.style.visibility = "hidden";
       title.style.zIndex = "-1";
-    }, 5000);
+    }, 7000);
   },
 };
 // METODE
@@ -53,41 +53,37 @@ const games = {
   },
   // MERISET KETIKA PLAYER MELEBIHI LEBAR LAYAR
   resetPlayerPosition() {
-    if (
-      config.player.x <= 0 ||
-      config.player.x >= 16 ||
-      config.player.y <= 0 ||
-      config.player.y >= 16
-    ) {
-      config.player.x = randomPosition();
-      config.player.y = randomPosition();
-    }
-    // console.log(this.resetPlayerPosition)
+    return config.player.x <= 0
+      ? ((config.player.x = 21), (config.player.y = config.player.y))
+      : config.player.x >= 21
+      ? ((config.player.x = 1), (config.player.y = config.player.y))
+      : config.player.y <= 0
+      ? ((config.player.y = 21), (config.player.x = config.player.x))
+      : config.player.y >= 21
+      ? ((config.player.y = 1), (config.player.x = config.player.x))
+      : false;
   },
   levelUp() {
     config.level += 1;
-    if (config.level % 5 === 0) {
-      config.level5 += 1;
-    }
-    return false;
+    config.level % 5 == 0 ? (config.level5 += 1) : false;
   },
   txtLevelUp() {
     if (config.level === 1) {
       title.innerHTML = "WELLCOME TO HAP HAP GAMES:)";
     } else if (config.level === 3) {
-      title.innerHTML = "ENJOY!!!";
-    } else if (config.level === 4) {
-      title.innerHTML = "AYO... 1 KALI LAGI NAIK LEVEL";
+      title.innerHTML = "AYO... DIKI LAGI NAIK LEVEL";
     } else if (config.level === 5) {
       title.innerHTML = "YEY KAMU SUDAH NAIK LEVEL";
     } else if (config.level === 7) {
       title.innerHTML = "SETIAP 5X MAKAN KAMU AKAN NAIK LEVEL";
-    } else if (config.level === 10) {
+    } else if (config.level === 9) {
       title2.style.opacity = "1";
       title2.style.visibility = "visible";
       title2.style.zIndex = "1";
     } else if (config.level === 11) {
       title.innerHTML = "MAKASIH SUDAH BERMAIN";
+    } else if (config.level === 13) {
+      title.innerHTML = "ENJOY!!!";
     } else {
       title.innerHTML = "";
     }
@@ -97,7 +93,7 @@ const games = {
     if (config.player.x == config.food.x && config.player.y == config.food.y) {
       this.levelUp();
       this.txtLevelUp();
-      
+
       config.showTittle();
       levelTxt.innerHTML = config.level5;
 
@@ -161,15 +157,11 @@ function movement(listen) {
 //MENGATUR ARAH KEPALA PLAYER
 function Headmovement() {
   const playerStyle = document.getElementById("player");
-  if (config.velocity.x == 1) {
-    playerStyle.style.transform = "scaleX(-1)";
-  }
-  if (config.velocity.y == 1) {
-    playerStyle.style.transform = "rotate(-90deg)";
-  }
-  if (config.velocity.y == -1) {
-    playerStyle.style.transform = "rotate(90deg)";
-  }
+  return config.velocity.x == 1 ? (playerStyle.style.transform = "scaleX(-1)")
+       : config.velocity.y == 1 ? (playerStyle.style.transform = "rotate(-90deg)")
+       : config.velocity.y == -1 ? (playerStyle.style.transform = "rotate(90deg)")
+       : false;
+
 }
 
 function start() {
