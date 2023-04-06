@@ -33,7 +33,7 @@ let config = {
       title.style.opacity = "0";
       title.style.visibility = "hidden";
       title.style.zIndex = "-1";
-    }, 7000);
+    }, 6000);
   },
 };
 // METODE
