@@ -24,16 +24,16 @@ let config = {
     y: 0,
   },
   showTittle() {
-    title.style.animation = "fadeIn 1s";
-    title.style.opacity = "1";
+    title.style.animation = "fadeIn 1s ease-in-out";
     title.style.visibility = "visible";
+    title.style.opacity = "1";
     title.style.zIndex = "1";
-
+    
     setTimeout(function () {
       title.style.opacity = "0";
       title.style.visibility = "hidden";
       title.style.zIndex = "-1";
-    }, 5000);
+    }, 3500);
   },
 };
 // METODE
@@ -68,8 +68,8 @@ const games = {
     config.level % 5 == 0 ? (config.level5 += 1) : false;
   },
   txtLevelUp() {
-    if (config.level === 1 || config.level == 2) {
-      title.innerHTML = "WELLCOME TO HAP HAP GAMES:)";
+    if (config.level === 1) {
+      title.innerHTML = "WELLCOME TO HAP HAP GAMES";
     } else if (config.level === 3) {
       title.innerHTML = "AYO... DIKI LAGI NAIK LEVEL";
     } else if (config.level === 5) {
@@ -84,8 +84,6 @@ const games = {
       title.innerHTML = "MAKASIH SUDAH BERMAIN";
     } else if (config.level === 13) {
       title.innerHTML = "ENJOY!!!";
-    } else {
-      title.innerHTML = '';
     }
   },
 
@@ -93,12 +91,8 @@ const games = {
     if (config.player.x == config.food.x && config.player.y == config.food.y) {
       this.levelUp();
       this.txtLevelUp();
-
       config.showTittle();
       levelTxt.innerHTML = config.level5;
-
-      console.log({ Level: config.level });
-      console.log({ Level: config.level5 });
       return true;
     }
     return false;

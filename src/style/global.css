@@ -47,6 +47,7 @@ main {
   top: 10%;
   color: white;
   width: 100%;
+  /* animation: fadeIn 3s ease-in-out; */
   /* animation: fadeOut 1s ease-in-out; */
   
 }
@@ -87,10 +88,7 @@ main {
   background-color: transparent;
   cursor: pointer;
 }
-btn:active {
-  background-color: transparent;
-  border-style: outset;
-}
+
 
 .btn i {
   font-size: 60px;
@@ -162,6 +160,7 @@ btn:active {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -171,6 +170,7 @@ btn:active {
   0%{
     opacity: 1;
   }
+
   100%{
     opacity: 0;
   }
