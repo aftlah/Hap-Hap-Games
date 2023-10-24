@@ -185,6 +185,7 @@ main {
     /* background-color: burlywood; */
     transform: translate(-45px, -5px);
     width: 200px;
+    bottom: 55px;
   }
   .kanan {
     right: 10px;
@@ -212,7 +213,7 @@ main {
     bottom: 24%;
   }
   .arrow #atas {
-    top: -6px;
+    top: -10px;
     right: 30%;
   }
   .arrow #bawah {

@@ -1,0 +1,14 @@
+challenge
+
+WAJIB:
+1. modif leve: makan 5x makan level +1
+2. setiap naik level, munculkan element HTML yg menarik:
+contoh, level 1 akan muncul text "Welcome". Level 2 akann muncul text "To My Website" dan seterusnya....
+3.buat level tertentu elementnnya adalah senuah link, yg ketika user nya klik. makan akan membuka link tersebut. contoh :
+level 10 -> memunculkan link instagram kita.
+ketika di klik -> browser akan membuka tab baru dari link tersebut
+
+SUNNAH
+1. Ketika player keluar dari zona board di game.maka posisi reset bukan di set manual, tapi harus dari posiis terakhir dimana player tersebut menabrak, dan arahkan balik. (respawn di tempat dia nabrak)
+2.buta tombol (UI) untuk trigger movement kaya gini..... dan fungsikan tombol tersebut seperti yg sudah ada. (seperti game boy).
+3. Munculkan tampilan level di websitenya, supaya user tau sekaran glevel berapa.
